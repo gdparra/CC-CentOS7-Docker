@@ -1,0 +1,11 @@
+#!/bin/bash
+#Remove unofficial Docker packages
+echo "Remove unofficial Docker packages"
+sudo yum -y remove docker docker-common container-selinux
+sudo yum -y remove docker-selinux
+#Install Docker
+echo "Install Docker"
+sudo yum makecache fast
+#sudo yum -y install /home/cc/CC-CentOS7/docker-engine-1.13.1-1.el7.centos.x86_64.rpm
+sudo yum -y install docker
+sudo systemctl start docker
